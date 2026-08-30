@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,600;0,700;0,800;0,900;1,700&family=JetBrains+Mono:wght@500;700&family=Public+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --acc: #FF7A00;
+    --acc-hover: #EA6C00;
+    --base: #0A1128;
+    --base-2: #141E38;
+    --light: #F8FAFC;
+    --surface: #FFFFFF;
+    --ink: #0F172A;
+    --muted-dark: #64748B;
+    --whatsapp: #22C55E;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Public Sans', system-ui, sans-serif;
+    color: var(--ink);
+    background-color: var(--light);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Archivo', system-ui, sans-serif;
+    letter-spacing: -0.025em;
+  }
+}
+
+/* Custom Pulse and Glow Effects */
+@keyframes pulse-subtle {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float {
+  animation: float 4s infinite ease-in-out;
+}
+
+/* Glassmorphism helpers */
+.glass-header {
+  background: rgba(10, 17, 40, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+}
+
+.glass-dark {
+  background: rgba(20, 30, 56, 0.75);
+  backdrop-filter: blur(10px);
+}

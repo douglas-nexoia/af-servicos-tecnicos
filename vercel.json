@@ -1,0 +1,45 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/ar-condicionado",
+      "destination": "/ar-condicionado.html"
+    },
+    {
+      "source": "/ar-condicionado/",
+      "destination": "/ar-condicionado.html"
+    },
+    {
+      "source": "/conserto-geladeira-e-maquinas",
+      "destination": "/conserto-geladeira-e-maquinas.html"
+    },
+    {
+      "source": "/conserto-geladeira-e-maquinas/",
+      "destination": "/conserto-geladeira-e-maquinas.html"
+    },
+    {
+      "source": "/geladeira",
+      "destination": "/conserto-geladeira-e-maquinas.html"
+    },
+    {
+      "source": "/maquinas",
+      "destination": "/conserto-geladeira-e-maquinas.html"
+    },
+    {
+      "source": "/portao-eletronico-e-cftv",
+      "destination": "/portao-eletronico-e-cftv.html"
+    },
+    {
+      "source": "/portao-eletronico-e-cftv/",
+      "destination": "/portao-eletronico-e-cftv.html"
+    },
+    {
+      "source": "/portao",
+      "destination": "/portao-eletronico-e-cftv.html"
+    },
+    {
+      "source": "/cftv",
+      "destination": "/portao-eletronico-e-cftv.html"
+    }
+  ]
+}
