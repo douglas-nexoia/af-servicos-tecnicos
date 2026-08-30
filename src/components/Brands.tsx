@@ -1,4 +1,5 @@
 import React from 'react';
+import { ShieldCheck } from 'lucide-react';
 
 interface BrandsProps {
   categoryTitle?: string;
@@ -6,10 +7,10 @@ interface BrandsProps {
 }
 
 export const Brands: React.FC<BrandsProps> = ({
-  categoryTitle = 'MARCAS MULTIMARCAS ATENDIDAS',
+  categoryTitle = 'MARCAS ATENDIDAS',
   brandsList = [
-    'LG',
-    'Samsung',
+    'LG Dual Inverter',
+    'Samsung WindFree',
     'Daikin',
     'Fujitsu',
     'Midea',
@@ -22,22 +23,26 @@ export const Brands: React.FC<BrandsProps> = ({
   ],
 }) => {
   return (
-    <section className="bg-base-2 py-5 border-b border-white/10 text-slate-400">
+    <section className="bg-base-2 py-6 border-b border-white/10 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
           
           {/* Label */}
-          <div className="font-mono text-xs font-bold tracking-widest text-slate-300 uppercase shrink-0 flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-acc"></span>
-            <span>{categoryTitle}:</span>
+          <div className="flex items-center gap-2 shrink-0">
+            <span className="p-1.5 rounded-md bg-acc/20 text-acc">
+              <ShieldCheck className="w-4 h-4" />
+            </span>
+            <span className="font-mono text-xs sm:text-sm font-extrabold tracking-widest text-acc uppercase">
+              {categoryTitle}:
+            </span>
           </div>
 
-          {/* Brands ticker / grid */}
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm sm:text-base font-bold text-slate-300">
+          {/* Brands Badges / Pills with High Contrast */}
+          <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
             {brandsList.map((brand, idx) => (
               <span
                 key={idx}
-                className="opacity-70 hover:opacity-100 hover:text-white transition-opacity select-none cursor-default"
+                className="inline-flex items-center px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white hover:text-acc border border-white/15 hover:border-acc/50 font-bold text-xs sm:text-sm transition-all select-none shadow-sm cursor-default"
               >
                 {brand}
               </span>
