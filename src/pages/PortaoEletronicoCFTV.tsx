@@ -131,7 +131,11 @@ export const PortaoEletronicoCFTVPage: React.FC = () => {
         <StepsProcess />
 
         {/* Guarantee Section */}
-        <GuaranteeSection />
+        <GuaranteeSection
+          serviceImage="/images/servico-portao-cftv.webp"
+          imageAlt="Motor de portão eletrônico e câmera de segurança"
+          imageCaption="Manutenção especializada de motores de portão e instalação de câmeras CFTV com acesso ao vivo no celular."
+        />
 
         {/* Coverage Section */}
         <Coverage whatsAppMessage="Olá, gostaria de solicitar orçamento para portão eletrônico/câmeras no meu endereço." />

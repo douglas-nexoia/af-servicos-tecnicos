@@ -134,7 +134,11 @@ export const ArCondicionadoPage: React.FC = () => {
         <StepsProcess />
 
         {/* Guarantee Section */}
-        <GuaranteeSection />
+        <GuaranteeSection
+          serviceImage="/images/servico-ar-condicionado.webp"
+          imageAlt="Ar condicionado Split High Wall em residência"
+          imageCaption="Atendimento especializado em Split e Inverter em domicílio com peças originais e garantia formal de até 6 meses."
+        />
 
         {/* Coverage Section */}
         <Coverage whatsAppMessage="Olá, gostaria de agendar uma visita técnica para ar condicionado no meu bairro." />

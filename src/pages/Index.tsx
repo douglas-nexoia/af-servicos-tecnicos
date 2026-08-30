@@ -10,7 +10,7 @@ import { Coverage } from '../components/Coverage';
 import { SocialProof } from '../components/SocialProof';
 import { FAQ } from '../components/FAQ';
 import { ContactSection } from '../components/ContactSection';
-import { Wind, Refrigerator, ShieldAlert, ArrowRight, CheckCircle2, Star, ShieldCheck } from 'lucide-react';
+import { Wind, Refrigerator, ShieldAlert, ArrowRight, CheckCircle2 } from 'lucide-react';
 
 export const IndexPage: React.FC = () => {
   const serviceCards = [
@@ -22,6 +22,8 @@ export const IndexPage: React.FC = () => {
       url: '/ar-condicionado',
       icon: Wind,
       badge: 'Carro-Chefe',
+      image: '/images/servico-ar-condicionado.webp',
+      imageAlt: 'Ar Condicionado Split High Wall instalado em sala residencial',
     },
     {
       title: 'Geladeiras, Máquinas & Lava e Seca',
@@ -31,6 +33,8 @@ export const IndexPage: React.FC = () => {
       url: '/conserto-geladeira-e-maquinas',
       icon: Refrigerator,
       badge: 'Atendimento Rápido',
+      image: '/images/servico-geladeira-maquinas.webp',
+      imageAlt: 'Geladeira Frost Free e Lava e Seca em cozinha residencial',
     },
     {
       title: 'Portões Eletrônicos & Câmeras (CFTV)',
@@ -40,6 +44,8 @@ export const IndexPage: React.FC = () => {
       url: '/portao-eletronico-e-cftv',
       icon: ShieldAlert,
       badge: 'Condomínios & Casas',
+      image: '/images/servico-portao-cftv.webp',
+      imageAlt: 'Motor de portão eletrônico deslizante e câmera de segurança residencial',
     },
   ];
 
@@ -86,7 +92,7 @@ export const IndexPage: React.FC = () => {
           ]}
         />
 
-        {/* 3 Main Services Hub Cards */}
+        {/* 3 Main Services Hub Cards with Authentic Images */}
         <section className="py-16 md:py-24 bg-white border-b border-slate-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-14">
@@ -107,54 +113,67 @@ export const IndexPage: React.FC = () => {
                 return (
                   <div
                     key={idx}
-                    className="bg-light rounded-3xl p-8 border border-slate-200 shadow-card hover:shadow-2xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group"
+                    className="bg-light rounded-3xl border border-slate-200 shadow-card hover:shadow-2xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between overflow-hidden group"
                   >
-                    <div>
-                      {/* Top Badge & Icon */}
-                      <div className="flex items-center justify-between mb-6">
-                        <div className="p-3.5 rounded-2xl bg-base text-acc group-hover:bg-acc group-hover:text-white transition-colors shadow-md">
-                          <Icon className="w-7 h-7" />
+                    {/* Top Image Banner */}
+                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-900">
+                      <img
+                        src={srv.image}
+                        alt={srv.imageAlt}
+                        loading="lazy"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-black/20"></div>
+                      
+                      {/* Top Badges over image */}
+                      <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
+                        <div className="p-2.5 rounded-xl bg-base/90 text-acc backdrop-blur-md border border-white/10 shadow-md">
+                          <Icon className="w-5 h-5" />
                         </div>
-                        <span className="text-[11px] font-mono font-bold px-3 py-1 rounded-full bg-slate-200/80 text-slate-700">
+                        <span className="text-[11px] font-mono font-bold px-3 py-1 rounded-full bg-slate-900/90 text-white border border-white/15 backdrop-blur-md">
                           {srv.badge}
                         </span>
                       </div>
-
-                      {/* Kicker & Title */}
-                      <div className="text-[11px] font-mono font-bold text-acc uppercase tracking-wider mb-1">
-                        {srv.kicker}
-                      </div>
-                      <h3 className="text-xl font-extrabold text-ink mb-3 group-hover:text-acc transition-colors">
-                        {srv.title}
-                      </h3>
-
-                      {/* Description */}
-                      <p className="text-sm text-slate-600 leading-relaxed mb-6">
-                        {srv.desc}
-                      </p>
-
-                      {/* Technical Chips */}
-                      <div className="flex flex-wrap gap-1.5 mb-8">
-                        {srv.chips.map((chip, cIdx) => (
-                          <span
-                            key={cIdx}
-                            className="inline-flex items-center gap-1 text-[11px] font-mono px-2.5 py-1 rounded-md bg-white border border-slate-200 text-slate-700 font-medium"
-                          >
-                            <CheckCircle2 className="w-3 h-3 text-emerald-600" />
-                            {chip}
-                          </span>
-                        ))}
-                      </div>
                     </div>
 
-                    {/* Action Link */}
-                    <a
-                      href={srv.url}
-                      className="inline-flex items-center justify-between w-full bg-slate-900 group-hover:bg-acc text-white px-5 py-3.5 rounded-xl font-bold text-sm transition-all shadow-sm"
-                    >
-                      <span>Ver Detalhes do Serviço</span>
-                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                    </a>
+                    <div className="p-7 flex flex-col justify-between flex-grow">
+                      <div>
+                        {/* Kicker & Title */}
+                        <div className="text-[11px] font-mono font-bold text-acc uppercase tracking-wider mb-1">
+                          {srv.kicker}
+                        </div>
+                        <h3 className="text-xl font-extrabold text-ink mb-3 group-hover:text-acc transition-colors">
+                          {srv.title}
+                        </h3>
+
+                        {/* Description */}
+                        <p className="text-sm text-slate-600 leading-relaxed mb-6">
+                          {srv.desc}
+                        </p>
+
+                        {/* Technical Chips */}
+                        <div className="flex flex-wrap gap-1.5 mb-8">
+                          {srv.chips.map((chip, cIdx) => (
+                            <span
+                              key={cIdx}
+                              className="inline-flex items-center gap-1 text-[11px] font-mono px-2.5 py-1 rounded-md bg-white border border-slate-200 text-slate-700 font-medium"
+                            >
+                              <CheckCircle2 className="w-3 h-3 text-emerald-600" />
+                              {chip}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Action Link */}
+                      <a
+                        href={srv.url}
+                        className="inline-flex items-center justify-between w-full bg-slate-900 group-hover:bg-acc text-white px-5 py-3.5 rounded-xl font-bold text-sm transition-all shadow-sm"
+                      >
+                        <span>Ver Detalhes do Serviço</span>
+                        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                      </a>
+                    </div>
                   </div>
                 );
               })}

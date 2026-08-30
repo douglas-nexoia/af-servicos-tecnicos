@@ -1,7 +1,17 @@
 import React from 'react';
-import { ShieldCheck, CheckCircle2, Award, Clock, FileText, UserCheck } from 'lucide-react';
+import { ShieldCheck, CheckCircle2, Award, FileText, UserCheck } from 'lucide-react';
 
-export const GuaranteeSection: React.FC = () => {
+interface GuaranteeSectionProps {
+  serviceImage?: string;
+  imageAlt?: string;
+  imageCaption?: string;
+}
+
+export const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({
+  serviceImage,
+  imageAlt = 'Atendimento técnico profissional em domicílio',
+  imageCaption = 'Serviço técnico executado com peças originais e garantia formal por escrito.',
+}) => {
   const guaranteeItems = [
     {
       icon: Award,
@@ -71,46 +81,85 @@ export const GuaranteeSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: Visual Trust Panel */}
+          {/* Right Column: Visual Trust Panel or Service Photo */}
           <div className="lg:col-span-5">
-            <div className="bg-base text-white p-8 rounded-3xl border border-white/10 shadow-2xl relative overflow-hidden text-center space-y-6">
-              
-              <div className="w-20 h-20 rounded-2xl bg-acc/20 border border-acc/40 text-acc flex items-center justify-center mx-auto shadow-glow">
-                <ShieldCheck className="w-10 h-10" />
-              </div>
+            {serviceImage ? (
+              <div className="bg-base text-white rounded-3xl border border-white/10 shadow-2xl overflow-hidden group">
+                <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-900">
+                  <img
+                    src={serviceImage}
+                    alt={imageAlt}
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-base via-base/30 to-transparent"></div>
+                  
+                  {/* Badge over image */}
+                  <div className="absolute top-4 left-4">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-base/90 text-acc border border-acc/40 backdrop-blur-md shadow-lg">
+                      <ShieldCheck className="w-3.5 h-3.5" />
+                      <span>Peças Originais & Garantia</span>
+                    </span>
+                  </div>
+                </div>
 
-              <div className="space-y-2">
-                <span className="text-xs font-mono text-acc uppercase tracking-widest block font-bold">
-                  Compromisso AF Serviços
-                </span>
-                <h3 className="text-2xl font-extrabold text-white">
-                  Qualidade Garantida ou Retorno Imediato
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-sm mx-auto">
-                  Caso qualquer defeito reapareça no período da garantia, nosso técnico retorna com prioridade máxima.
-                </p>
-              </div>
-
-              <div className="pt-4 border-t border-white/10 grid grid-cols-2 gap-4 text-left">
-                <div className="flex items-center gap-2 text-xs text-slate-200">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>CNPJ Regular Ativo</span>
-                </div>
-                <div className="flex items-center gap-2 text-xs text-slate-200">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Ordem de Serviço</span>
-                </div>
-                <div className="flex items-center gap-2 text-xs text-slate-200">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Técnicos Treinados</span>
-                </div>
-                <div className="flex items-center gap-2 text-xs text-slate-200">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Suporte Pós-Venda</span>
+                <div className="p-6 space-y-3">
+                  <h3 className="text-xl font-bold text-white">
+                    Compromisso AF Serviços
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                    {imageCaption}
+                  </p>
+                  <div className="pt-3 border-t border-white/10 grid grid-cols-2 gap-3 text-left">
+                    <div className="flex items-center gap-2 text-xs text-slate-200">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                      <span>Atendimento Local</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-xs text-slate-200">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                      <span>Ordem de Serviço</span>
+                    </div>
+                  </div>
                 </div>
               </div>
+            ) : (
+              <div className="bg-base text-white p-8 rounded-3xl border border-white/10 shadow-2xl relative overflow-hidden text-center space-y-6">
+                <div className="w-20 h-20 rounded-2xl bg-acc/20 border border-acc/40 text-acc flex items-center justify-center mx-auto shadow-glow">
+                  <ShieldCheck className="w-10 h-10" />
+                </div>
 
-            </div>
+                <div className="space-y-2">
+                  <span className="text-xs font-mono text-acc uppercase tracking-widest block font-bold">
+                    Compromisso AF Serviços
+                  </span>
+                  <h3 className="text-2xl font-extrabold text-white">
+                    Qualidade Garantida ou Retorno Imediato
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-sm mx-auto">
+                    Caso qualquer defeito reapareça no período da garantia, nosso técnico retorna com prioridade máxima.
+                  </p>
+                </div>
+
+                <div className="pt-4 border-t border-white/10 grid grid-cols-2 gap-4 text-left">
+                  <div className="flex items-center gap-2 text-xs text-slate-200">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span>CNPJ Regular Ativo</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-xs text-slate-200">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span>Ordem de Serviço</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-xs text-slate-200">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span>Técnicos Treinados</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-xs text-slate-200">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span>Suporte Pós-Venda</span>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
 
         </div>

@@ -130,7 +130,11 @@ export const ConsertoGeladeiraMaquinasPage: React.FC = () => {
         <StepsProcess />
 
         {/* Guarantee Section */}
-        <GuaranteeSection />
+        <GuaranteeSection
+          serviceImage="/images/servico-geladeira-maquinas.webp"
+          imageAlt="Geladeira Frost Free e Lavadora em residência"
+          imageCaption="Diagnóstico no mesmo dia em domicílio para refrigeradores, lavadoras e lava e seca com peças originais e garantia."
+        />
 
         {/* Coverage Section */}
         <Coverage whatsAppMessage="Olá, gostaria de agendar uma visita técnica para geladeira/máquina de lavar no meu bairro." />
