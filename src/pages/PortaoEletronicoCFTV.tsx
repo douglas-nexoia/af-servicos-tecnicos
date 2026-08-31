@@ -141,7 +141,11 @@ export const PortaoEletronicoCFTVPage: React.FC = () => {
         <Coverage whatsAppMessage="Olá, gostaria de solicitar orçamento para portão eletrônico/câmeras no meu endereço." />
 
         {/* Social Proof Google Reviews */}
-        <SocialProof />
+        <SocialProof
+          category="portao"
+          title="Avaliações de Clientes de Portão Eletrônico e CFTV"
+          subtitle="Depoimentos reais de moradores e condomínios que confiam no atendimento técnico da AF Serviços."
+        />
 
         {/* FAQ Section */}
         <FAQ

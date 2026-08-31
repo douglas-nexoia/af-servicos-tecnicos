@@ -144,7 +144,11 @@ export const ArCondicionadoPage: React.FC = () => {
         <Coverage whatsAppMessage="Olá, gostaria de agendar uma visita técnica para ar condicionado no meu bairro." />
 
         {/* Social Proof Google Reviews */}
-        <SocialProof />
+        <SocialProof
+          category="ar"
+          title="Quem Conserta o Ar com a AF Serviços Recomenda"
+          subtitle="Confira a experiência de quem já resolveu problemas de climatização com nossos técnicos na região."
+        />
 
         {/* FAQ Section */}
         <FAQ

@@ -140,7 +140,11 @@ export const ConsertoGeladeiraMaquinasPage: React.FC = () => {
         <Coverage whatsAppMessage="Olá, gostaria de agendar uma visita técnica para geladeira/máquina de lavar no meu bairro." />
 
         {/* Social Proof Google Reviews */}
-        <SocialProof />
+        <SocialProof
+          category="geladeira"
+          title="Avaliações de Clientes de Geladeiras e Lavadoras"
+          subtitle="Veja o que nossos clientes em Campinas, Valinhos e Hortolândia dizem sobre nossos consertos."
+        />
 
         {/* FAQ Section */}
         <FAQ
