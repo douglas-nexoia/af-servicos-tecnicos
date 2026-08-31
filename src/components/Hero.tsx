@@ -1,5 +1,6 @@
 import React from 'react';
 import { MessageCircle, Phone, ShieldCheck, Star, MapPin, CheckCircle2, Zap } from 'lucide-react';
+import { reportarConversaoWhatsApp, reportarConversaoTelefone } from '../lib/conversions';
 
 interface HeroProps {
   badgeRegion?: string;
@@ -75,6 +76,7 @@ export const Hero: React.FC<HeroProps> = ({
                 href={waUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={reportarConversaoWhatsApp}
                 className="inline-flex items-center justify-center gap-3 bg-whatsapp hover:bg-whatsapp-hover text-white px-7 py-4 rounded-xl font-bold text-base shadow-whatsapp transition-all hover:scale-[1.02] active:scale-95 text-center group"
               >
                 <MessageCircle className="w-5 h-5 fill-white transition-transform group-hover:scale-110" />
@@ -83,6 +85,7 @@ export const Hero: React.FC<HeroProps> = ({
 
               <a
                 href="tel:+5519996447171"
+                onClick={reportarConversaoTelefone}
                 className="inline-flex items-center justify-center gap-2.5 bg-white/10 hover:bg-white/15 border border-white/20 text-white px-5 py-4 rounded-xl font-mono text-sm font-bold transition-all text-center group"
               >
                 <Phone className="w-4 h-4 text-slate-300 group-hover:text-emerald-400" />
@@ -158,6 +161,7 @@ export const Hero: React.FC<HeroProps> = ({
                 href={waUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={reportarConversaoWhatsApp}
                 className="flex items-center justify-center gap-2.5 w-full bg-acc hover:bg-acc-hover text-white py-3.5 px-4 rounded-xl font-bold text-sm shadow-glow transition-all hover:scale-[1.02] active:scale-95"
               >
                 <MessageCircle className="w-4 h-4 fill-white" />

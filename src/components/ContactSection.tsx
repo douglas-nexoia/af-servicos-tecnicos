@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { MessageCircle, Phone, Clock, Send, ShieldCheck, User, CheckCircle2 } from 'lucide-react';
+import { reportarConversaoWhatsApp } from '../lib/conversions';
 
 interface ContactSectionProps {
   serviceRefTag?: string;
@@ -18,6 +19,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
     e.preventDefault();
     const textMsg = `Olá, meu nome é ${name || 'Cliente'} (Tel: ${phone || 'não informado'}). Preciso de atendimento para: ${problem || 'Serviço Técnico'} [Ref: ${serviceRefTag}]`;
     const waUrl = `https://wa.me/5519996447171?text=${encodeURIComponent(textMsg)}`;
+    reportarConversaoWhatsApp();
     window.open(waUrl, '_blank', 'noopener,noreferrer');
   };
 
@@ -58,6 +60,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
                   href={directWaUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={reportarConversaoWhatsApp}
                   className="inline-flex items-center justify-center gap-3 w-full sm:w-auto bg-whatsapp hover:bg-whatsapp-hover text-white px-8 py-4 rounded-2xl font-bold text-base shadow-whatsapp transition-all hover:scale-[1.02] active:scale-95 text-center group"
                 >
                   <MessageCircle className="w-6 h-6 fill-white" />

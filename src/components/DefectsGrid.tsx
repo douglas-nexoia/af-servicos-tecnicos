@@ -1,5 +1,6 @@
 import React from 'react';
 import { MessageCircle, AlertTriangle, CheckCircle2, ArrowRight } from 'lucide-react';
+import { reportarConversaoWhatsApp } from '../lib/conversions';
 
 export interface DefectItem {
   id: string;
@@ -89,6 +90,7 @@ export const DefectsGrid: React.FC<DefectsGridProps> = ({
                   href={waUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={reportarConversaoWhatsApp}
                   className="inline-flex items-center justify-between w-full bg-slate-900 hover:bg-whatsapp text-white px-4 py-3 rounded-xl font-bold text-xs sm:text-sm transition-all duration-200 shadow-sm group-hover:shadow-md"
                 >
                   <span className="flex items-center gap-2">

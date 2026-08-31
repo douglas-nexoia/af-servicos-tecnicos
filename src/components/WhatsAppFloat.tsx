@@ -1,5 +1,6 @@
 import React from 'react';
 import { MessageCircle } from 'lucide-react';
+import { reportarConversaoWhatsApp } from '../lib/conversions';
 
 interface WhatsAppFloatProps {
   message?: string;
@@ -19,6 +20,7 @@ export const WhatsAppFloat: React.FC<WhatsAppFloatProps> = ({
         href={waUrl}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={reportarConversaoWhatsApp}
         className="hidden md:flex items-center gap-2 bg-slate-900/95 text-white px-3.5 py-2 rounded-xl text-xs font-semibold shadow-xl border border-white/10 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0"
       >
         <span className="relative flex h-2 w-2">
@@ -33,6 +35,7 @@ export const WhatsAppFloat: React.FC<WhatsAppFloatProps> = ({
         href={waUrl}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={reportarConversaoWhatsApp}
         className="relative flex items-center justify-center w-14 h-14 bg-whatsapp hover:bg-whatsapp-hover rounded-full text-white shadow-whatsapp transition-all duration-300 hover:scale-110 active:scale-95"
         aria-label="Abrir conversa no WhatsApp"
       >

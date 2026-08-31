@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Phone, MessageCircle, Menu, X, ShieldCheck } from 'lucide-react';
 import { AFLogo } from './AFLogo';
+import { reportarConversaoWhatsApp, reportarConversaoTelefone } from '../lib/conversions';
 
 interface HeaderProps {
   currentRoute?: 'home' | 'ar' | 'geladeira' | 'portao';
@@ -61,6 +62,7 @@ export const Header: React.FC<HeaderProps> = ({
             {/* Phone Click-to-call */}
             <a
               href="tel:+5519996447171"
+              onClick={reportarConversaoTelefone}
               className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 transition-colors text-slate-200 hover:text-white group"
               title="Ligue agora para atendimento direto"
             >
@@ -79,6 +81,7 @@ export const Header: React.FC<HeaderProps> = ({
               href={waUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={reportarConversaoWhatsApp}
               className="inline-flex items-center justify-center gap-2 bg-whatsapp hover:bg-whatsapp-hover text-white px-4 py-2.5 rounded-xl font-bold text-sm shadow-whatsapp transition-all hover:scale-[1.03] active:scale-95 group"
             >
               <MessageCircle className="w-4 h-4 fill-white transition-transform group-hover:rotate-12" />
@@ -92,6 +95,7 @@ export const Header: React.FC<HeaderProps> = ({
               href={waUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={reportarConversaoWhatsApp}
               className="p-2.5 bg-whatsapp rounded-lg text-white shadow-md active:scale-90"
               aria-label="Abrir WhatsApp"
             >
@@ -131,6 +135,7 @@ export const Header: React.FC<HeaderProps> = ({
           <div className="pt-3 border-t border-white/10 space-y-2">
             <a
               href="tel:+5519996447171"
+              onClick={reportarConversaoTelefone}
               className="flex items-center justify-center gap-2 w-full py-3 bg-white/10 rounded-xl font-mono text-sm font-bold text-slate-100"
             >
               <Phone className="w-4 h-4 text-emerald-400" />
@@ -140,6 +145,7 @@ export const Header: React.FC<HeaderProps> = ({
               href={waUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={reportarConversaoWhatsApp}
               className="flex items-center justify-center gap-2 w-full py-3 bg-whatsapp text-white rounded-xl font-bold text-sm shadow-whatsapp"
             >
               <MessageCircle className="w-5 h-5 fill-white" />

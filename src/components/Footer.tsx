@@ -1,6 +1,7 @@
 import React from 'react';
 import { Phone, MessageCircle, Instagram, MapPin, ShieldCheck, Clock, CheckCircle2 } from 'lucide-react';
 import { AFLogo } from './AFLogo';
+import { reportarConversaoWhatsApp, reportarConversaoTelefone } from '../lib/conversions';
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -130,6 +131,7 @@ export const Footer: React.FC = () => {
                 href="https://wa.me/5519996447171?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20atendimento%20t%C3%A9cnico."
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={reportarConversaoWhatsApp}
                 className="flex items-center gap-3 p-3 rounded-xl bg-whatsapp/15 border border-whatsapp/30 text-emerald-300 hover:bg-whatsapp/25 transition-all group"
               >
                 <MessageCircle className="w-5 h-5 text-whatsapp group-hover:scale-110 transition-transform" />
@@ -141,6 +143,7 @@ export const Footer: React.FC = () => {
 
               <a
                 href="tel:+5519996447171"
+                onClick={reportarConversaoTelefone}
                 className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10 text-slate-200 hover:bg-white/10 transition-all group"
               >
                 <Phone className="w-5 h-5 text-slate-300 group-hover:text-white transition-colors" />

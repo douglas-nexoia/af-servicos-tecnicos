@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { HelpCircle, ChevronDown, MessageCircle } from 'lucide-react';
+import { reportarConversaoWhatsApp } from '../lib/conversions';
 
 interface FAQProps {
   customQuestions?: { q: string; a: string }[];
@@ -72,6 +73,7 @@ export const FAQ: React.FC<FAQProps> = ({
                 href={waUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={reportarConversaoWhatsApp}
                 className="inline-flex items-center gap-2 bg-whatsapp hover:bg-whatsapp-hover text-white px-5 py-3 rounded-xl font-bold text-xs sm:text-sm shadow-whatsapp transition-all"
               >
                 <MessageCircle className="w-4 h-4 fill-white" />

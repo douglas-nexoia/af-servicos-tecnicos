@@ -1,5 +1,6 @@
 import React from 'react';
 import { MapPin, MessageCircle, Navigation, CheckCircle2, Clock, ShieldCheck } from 'lucide-react';
+import { reportarConversaoWhatsApp } from '../lib/conversions';
 
 interface CoverageProps {
   whatsAppMessage?: string;
@@ -123,6 +124,7 @@ export const Coverage: React.FC<CoverageProps> = ({
               href={waUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={reportarConversaoWhatsApp}
               className="inline-flex items-center justify-center gap-2.5 bg-whatsapp hover:bg-whatsapp-hover text-white px-6 py-3.5 rounded-xl text-sm font-bold shadow-whatsapp transition-all hover:scale-[1.02] active:scale-95 shrink-0"
             >
               <MessageCircle className="w-4 h-4 fill-white" />
