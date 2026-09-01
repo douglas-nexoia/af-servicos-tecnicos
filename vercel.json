@@ -1,5 +1,17 @@
 {
   "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/conserto-geladeira-e-maquinas",
+      "destination": "/conserto-de-geladeiras",
+      "permanent": true
+    },
+    {
+      "source": "/conserto-geladeira-e-maquinas/",
+      "destination": "/conserto-de-geladeiras",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/ar-condicionado",
