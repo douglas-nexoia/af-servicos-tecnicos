@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { ConsertoGeladeirasPage } from './pages/ConsertoGeladeiras';
+import { ConsertoMaquinaLavarPage } from './pages/ConsertoMaquinaLavar';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <ConsertoGeladeirasPage />
+    <ConsertoMaquinaLavarPage />
   </React.StrictMode>
 );

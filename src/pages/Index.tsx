@@ -10,7 +10,7 @@ import { Coverage } from '../components/Coverage';
 import { SocialProof } from '../components/SocialProof';
 import { FAQ } from '../components/FAQ';
 import { ContactSection } from '../components/ContactSection';
-import { Wind, Refrigerator, ShieldAlert, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Wind, Refrigerator, WashingMachine, ShieldAlert, ArrowRight, CheckCircle2 } from 'lucide-react';
 
 export const IndexPage: React.FC = () => {
   const serviceCards = [
@@ -18,7 +18,7 @@ export const IndexPage: React.FC = () => {
       title: 'Ar Condicionado Split & Inverter',
       kicker: 'CLIMATIZAÇÃO RESIDENCIAL & COMERCIAL',
       desc: 'Conserto, recarga de gás, reparo de placas inverter, eliminação de vazamentos de água e manutenção preventiva.',
-      chips: ['Não Gela', 'Pingando Água', 'Carga de Gás', 'Placa Inverter', 'Garantia 6 Meses'],
+      chips: ['Não Gela', 'Pingando Água', 'Carga de Gás', 'Garantia 6 Meses'],
       url: '/ar-condicionado',
       icon: Wind,
       badge: 'Carro-Chefe',
@@ -26,21 +26,32 @@ export const IndexPage: React.FC = () => {
       imageAlt: 'Ar Condicionado Split High Wall instalado em sala residencial',
     },
     {
-      title: 'Geladeiras, Máquinas & Lava e Seca',
-      kicker: 'LINHA BRANCA MULTIMARCAS',
-      desc: 'Assistência técnica especializada em refrigeradores Frost Free, Side by Side, lavadoras automáticas e lava e seca.',
-      chips: ['Não Gela Embaixo', 'Não Centrifuga', 'Código de Erro', 'Troca de Compressor'],
-      url: '/conserto-geladeira-e-maquinas',
+      title: 'Conserto de Geladeiras & Freezers',
+      kicker: 'REFRIGERAÇÃO MULTIMARCAS',
+      desc: 'Assistência técnica de refrigeradores Frost Free, Side by Side, Inverse e Freezers com peças originais e garantia formal.',
+      chips: ['Não Gela Embaixo', 'Vazando Água', 'Motor Estalando', 'Placa Inverter'],
+      url: '/conserto-de-geladeiras',
       icon: Refrigerator,
-      badge: 'Atendimento Rápido',
-      image: '/images/servico-geladeira-maquinas.webp',
-      imageAlt: 'Geladeira Frost Free e Lava e Seca em cozinha residencial',
+      badge: 'Atendimento no Local',
+      image: '/images/servico-geladeira.webp',
+      imageAlt: 'Geladeira Frost Free em cozinha residencial moderna',
     },
     {
-      title: 'Portões Eletrônicos & Câmeras (CFTV)',
+      title: 'Máquinas de Lavar & Lava e Seca',
+      kicker: 'LAVADORAS AUTOMÁTICAS',
+      desc: 'Especialistas em conserto de lavadoras e lava e seca. Não centrifuga, vazamento de água, rolamentos barulhentos ou erro no display.',
+      chips: ['Não Centrifuga', 'Bomba Travada', 'Barulho de Turbina', 'Código de Erro'],
+      url: '/conserto-maquina-lavar',
+      icon: WashingMachine,
+      badge: 'Especialista',
+      image: '/images/servico-maquina-lavar.webp',
+      imageAlt: 'Máquina de Lavar e Lava e Seca em lavanderia residencial',
+    },
+    {
+      title: 'Portões Eletrônicos & CFTV',
       kicker: 'AUTOMAÇÃO & SEGURANÇA ELETRÔNICA',
       desc: 'Manutenção de motores de portão, troca de placas e cremalheiras, gravação de controles e instalação de câmeras com acesso no celular.',
-      chips: ['Portão Travado', 'Troca de Capacitor', 'Gravação de Controles', 'CFTV no Celular'],
+      chips: ['Portão Travado', 'Troca de Capacitor', 'Gravação Controles', 'CFTV Celular'],
       url: '/portao-eletronico-e-cftv',
       icon: ShieldAlert,
       badge: 'Condomínios & Casas',
@@ -107,7 +118,7 @@ export const IndexPage: React.FC = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {serviceCards.map((srv, idx) => {
                 const Icon = srv.icon;
                 return (

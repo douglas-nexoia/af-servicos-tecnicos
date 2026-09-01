@@ -15,7 +15,8 @@ export default defineConfig({
       input: {
         main: path.resolve(__dirname, "index.html"),
         ar: path.resolve(__dirname, "ar-condicionado.html"),
-        geladeira: path.resolve(__dirname, "conserto-geladeira-e-maquinas.html"),
+        geladeiras: path.resolve(__dirname, "conserto-de-geladeiras.html"),
+        maquinas: path.resolve(__dirname, "conserto-maquina-lavar.html"),
         portao: path.resolve(__dirname, "portao-eletronico-e-cftv.html"),
       },
       output: {

@@ -55,7 +55,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a
-                  href="/conserto-geladeira-e-maquinas"
+                  href="/conserto-de-geladeiras"
                   className="hover:text-acc transition-colors flex items-center gap-2"
                 >
                   <span className="text-acc">›</span>
@@ -64,7 +64,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a
-                  href="/conserto-geladeira-e-maquinas"
+                  href="/conserto-maquina-lavar"
                   className="hover:text-acc transition-colors flex items-center gap-2"
                 >
                   <span className="text-acc">›</span>

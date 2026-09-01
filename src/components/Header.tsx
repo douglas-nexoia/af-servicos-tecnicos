@@ -4,7 +4,7 @@ import { AFLogo } from './AFLogo';
 import { reportarConversaoWhatsApp, reportarConversaoTelefone } from '../lib/conversions';
 
 interface HeaderProps {
-  currentRoute?: 'home' | 'ar' | 'geladeira' | 'portao';
+  currentRoute?: 'home' | 'ar' | 'geladeira' | 'maquina' | 'portao';
   whatsAppMessage?: string;
 }
 
@@ -18,7 +18,8 @@ export const Header: React.FC<HeaderProps> = ({
   const navLinks = [
     { label: 'Início', href: '/', id: 'home' },
     { label: 'Ar Condicionado', href: '/ar-condicionado', id: 'ar' },
-    { label: 'Geladeiras & Lavadoras', href: '/conserto-geladeira-e-maquinas', id: 'geladeira' },
+    { label: 'Geladeiras', href: '/conserto-de-geladeiras', id: 'geladeira' },
+    { label: 'Máquinas de Lavar', href: '/conserto-maquina-lavar', id: 'maquina' },
     { label: 'Portões & CFTV', href: '/portao-eletronico-e-cftv', id: 'portao' },
   ];
 

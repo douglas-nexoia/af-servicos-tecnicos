@@ -10,20 +10,68 @@
       "destination": "/ar-condicionado.html"
     },
     {
-      "source": "/conserto-geladeira-e-maquinas",
-      "destination": "/conserto-geladeira-e-maquinas.html"
+      "source": "/conserto-de-geladeiras",
+      "destination": "/conserto-de-geladeiras.html"
     },
     {
-      "source": "/conserto-geladeira-e-maquinas/",
-      "destination": "/conserto-geladeira-e-maquinas.html"
+      "source": "/conserto-de-geladeiras/",
+      "destination": "/conserto-de-geladeiras.html"
+    },
+    {
+      "source": "/geladeiras",
+      "destination": "/conserto-de-geladeiras.html"
+    },
+    {
+      "source": "/geladeiras/",
+      "destination": "/conserto-de-geladeiras.html"
     },
     {
       "source": "/geladeira",
-      "destination": "/conserto-geladeira-e-maquinas.html"
+      "destination": "/conserto-de-geladeiras.html"
+    },
+    {
+      "source": "/geladeira/",
+      "destination": "/conserto-de-geladeiras.html"
+    },
+    {
+      "source": "/conserto-maquina-lavar",
+      "destination": "/conserto-maquina-lavar.html"
+    },
+    {
+      "source": "/conserto-maquina-lavar/",
+      "destination": "/conserto-maquina-lavar.html"
+    },
+    {
+      "source": "/maquina-de-lavar",
+      "destination": "/conserto-maquina-lavar.html"
+    },
+    {
+      "source": "/maquina-de-lavar/",
+      "destination": "/conserto-maquina-lavar.html"
     },
     {
       "source": "/maquinas",
-      "destination": "/conserto-geladeira-e-maquinas.html"
+      "destination": "/conserto-maquina-lavar.html"
+    },
+    {
+      "source": "/maquinas/",
+      "destination": "/conserto-maquina-lavar.html"
+    },
+    {
+      "source": "/lava-e-seca",
+      "destination": "/conserto-maquina-lavar.html"
+    },
+    {
+      "source": "/lava-e-seca/",
+      "destination": "/conserto-maquina-lavar.html"
+    },
+    {
+      "source": "/conserto-geladeira-e-maquinas",
+      "destination": "/conserto-de-geladeiras.html"
+    },
+    {
+      "source": "/conserto-geladeira-e-maquinas/",
+      "destination": "/conserto-de-geladeiras.html"
     },
     {
       "source": "/portao-eletronico-e-cftv",
