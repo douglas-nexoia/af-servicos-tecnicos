@@ -11,6 +11,7 @@ import { Coverage } from '../components/Coverage';
 import { SocialProof } from '../components/SocialProof';
 import { FAQ } from '../components/FAQ';
 import { ContactSection } from '../components/ContactSection';
+import { reportarConversaoWhatsApp } from '../lib/conversions';
 import { Refrigerator, Sparkles, CheckCircle2, ShieldCheck, ThermometerSnowflake, Wrench } from 'lucide-react';
 
 export const ConsertoGeladeirasPage: React.FC = () => {
@@ -167,6 +168,7 @@ export const ConsertoGeladeirasPage: React.FC = () => {
                   href={`https://wa.me/5519996447171?text=${encodeURIComponent('Olá! Preciso de conserto urgente na minha geladeira [Ref: #geladeira-urgente]')}`}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={reportarConversaoWhatsApp}
                   className="inline-flex items-center justify-center gap-2.5 bg-whatsapp hover:bg-whatsapp-hover text-white px-6 py-3.5 rounded-xl font-bold text-sm shadow-whatsapp transition-all text-center"
                 >
                   <Wrench className="w-4 h-4" />
